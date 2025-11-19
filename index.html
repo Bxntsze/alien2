@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alien 2</title>
     <script>
-        function setKep(id, kep){
-            
+        let szamok = [ 0, 1, 2, 3, 4 ];
+        function katt(id){
+            szamok[id]++;
+            if( szamok[id] == 5){
+                szamok[id] = 1;
+            }
+            document.getElementById("kep"+id).src = `alien${szamok[id]}.png`
         }
     </script>
     <style>
@@ -21,35 +26,9 @@
 </head>
 <body>
     <div id="asd">
-        <img src="alien1.png">
-        <img src="alien2.png">
-        <img src="alien3.png">
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alien 1</title>
-    <script>
-
-    </script>
-    <style>
-        #asd{
-            background-color: white;
-            width: 300px;
-            margin: 0px auto;
-            padding: 10px;
-
-        }
-        body{background-color: darkgoldenrod;}
-    </style>
-</head>
-<body>
-    <div id="asd">
-        <img src="alien1.png">
-        <img src="alien2.png">
-        <img src="alien3.png">
-        <img src="alien4.png">
-    </div>
+        <img src="alien1.png" id="kep1" onclick="katt(1);">
+        <img src="alien2.png"id="kep2"onclick="katt(2);">
+        <img src="alien3.png"id="kep3"onclick="katt(3);">
+        <img src="alien4.png"id="kep4"onclick="katt(4);">
 </body>
 </html>
